@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2022 a las 19:29:51
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Host: 127.0.0.1
+-- Generation Time: Oct 23, 2023 at 08:33 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,16 +22,14 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `examuf1_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `examuf1_db`;
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `posts`
+-- Table structure for table `posts`
 --
 
-DROP TABLE IF EXISTS `posts`;
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
   `synopsis` text NOT NULL,
   `title` text NOT NULL,
   `director` text NOT NULL,
@@ -39,17 +37,11 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `youtube_link` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `dateTime` timestamp NOT NULL DEFAULT current_timestamp(),
-  `image_path` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4;
+  `image_path` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Truncar tablas antes de insertar `posts`
---
-
-TRUNCATE TABLE `posts`;
---
--- Volcado de datos para la tabla `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `synopsis`, `title`, `director`, `link`, `youtube_link`, `user_id`, `dateTime`, `image_path`) VALUES
@@ -85,40 +77,74 @@ INSERT INTO `posts` (`id`, `synopsis`, `title`, `director`, `link`, `youtube_lin
 (56, 'En Finlandia, en 1923, el paso de un cometa hizo que los habitantes de un pueblo quedaran completamente desorientados; incluso una mujer llegó a llamar a la policía denunciando que el hombre que estaba en su casa no era su marido. Décadas más tarde, un grupo de amigos recuerda este caso mientras cenan, brindan y se preparan para ver pasar un cometa...', 'Coherence', 'James Ward Byrkit', 'https://www.filmaffinity.com/es/film974551.html', 'https://www.youtube.com/watch?v=sEceDz1Rodc', 3, '2022-10-17 18:18:20', '56.jpg'),
 (57, 'Unos jóvenes ladrones creen haber encontrado la oportunidad de cometer el robo perfecto. Su objetivo será un ciego solitario, poseedor de miles de dólares ocultos. Pero tan pronto como entran en su casa serán conscientes de su error, pues se encontrarán atrapados y luchando por sobrevivir contra un psicópata con sus propios y temibles secretos', 'Don\'t Breathe', 'Fede Álvarez', 'https://www.filmaffinity.com/es/film609968.html', 'https://www.youtube.com/watch?v=76yBTNDB6vU', 3, '2022-10-18 15:56:18', '57.jpg'),
 (58, 'Tanto Gi Taek (Song Kang-ho) como su familia están sin trabajo. Cuando su hijo mayor, Gi Woo (Choi Woo-sik), empieza a dar clases particulares en casa de Park (Lee Seon-gyun), las dos familias, que tienen mucho en común pese a pertenecer a dos mundos totalmente distintos, comienzan una interrelación de resultados imprevisibles.', 'Parasite', 'Bong Joon-ho', 'https://www.filmaffinity.com/es/film520465.html', 'https://www.youtube.com/watch?v=isOGD_7hNIY', 3, '2022-10-18 15:57:56', '58.jpg'),
-(59, 'Para sobrellevar el insomnio crónico que sufre desde su regreso de Vietnam, Travis Bickle (Robert De Niro) trabaja como taxista nocturno en Nueva York. Es un hombre insociable que apenas tiene contacto con los demás, se pasa los días en el cine y vive prendado de Betsy (Cybill Shepherd), una atractiva rubia que trabaja como voluntaria en una campaña política. Pero lo que realmente obsesiona a Travis es comprobar cómo la violencia, la sordidez y la desolación dominan la ciudad. Y un día decide pasar a la acción.', 'Taxi Driver', 'Martin Scorsese', 'https://www.filmaffinity.com/es/film396074.html', 'https://www.youtube.com/watch?v=UUxD4-dEzn0', 3, '2022-10-18 16:02:32', '59.jpg');
+(59, 'Para sobrellevar el insomnio crónico que sufre desde su regreso de Vietnam, Travis Bickle (Robert De Niro) trabaja como taxista nocturno en Nueva York. Es un hombre insociable que apenas tiene contacto con los demás, se pasa los días en el cine y vive prendado de Betsy (Cybill Shepherd), una atractiva rubia que trabaja como voluntaria en una campaña política. Pero lo que realmente obsesiona a Travis es comprobar cómo la violencia, la sordidez y la desolación dominan la ciudad. Y un día decide pasar a la acción.', 'Taxi Driver', 'Martin Scorsese', 'https://www.filmaffinity.com/es/film396074.html', 'https://www.youtube.com/watch?v=UUxD4-dEzn0', 3, '2022-10-18 16:02:32', '59.jpg'),
+(60, 'Jokse', 'PELI1', 'JO', 'www.google.com', 'https://www.youtube.com/watch?v=qkzcjwnueLA&amp;t=2284s', 9, '2023-10-23 16:38:05', ''),
+(61, 'lalala', 'PELI2', 'Jo mateix', 'www.google.com', 'https://www.youtube.com/watch?v=BdGO7T6XavU', 9, '2023-10-23 16:42:05', ''),
+(62, 'aldskfaksdjf', 'PELI3', 'JO pesao', 'www.google.com', 'https://www.youtube.com/watch?v=BdGO7T6XavU', 9, '2023-10-23 16:44:26', ''),
+(63, 'asdfasdf', 'PELI4', 'aslkdfa', 'www.google.com', 'https://www.youtube.com/watch?v=qkzcjwnueLA&amp;t=2284s', 9, '2023-10-23 16:47:05', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `nickname` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(32) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `password` varchar(500) NOT NULL,
+  `id` int(11) NOT NULL,
   `reset_token` text NOT NULL,
   `remember_me_token` text NOT NULL,
   `social_provider` enum('','Twitter','GitHub','Google') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+  `role` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Truncar tablas antes de insertar `users`
+-- Dumping data for table `users`
 --
 
-TRUNCATE TABLE `users`;
+INSERT INTO `users` (`nickname`, `email`, `password`, `id`, `reset_token`, `remember_me_token`, `social_provider`, `role`) VALUES
+('Anakin', 'anakinskywalker@example.com', 'dd9d21e22391090ddce7c6ed58c6412d', 1, '', '39c6bca8b264009aeaa40e13340b4084', '', ''),
+('Usuari1', 'user@example.com', 'dd9d21e22391090ddce7c6ed58c6412d', 2, '', '', '', ''),
+('Luke', 'lukeskywalker@sapalomera.cat', '', 3, '', 'da8aa95050bdaede6d7415e9af84ef1a', 'GitHub', ''),
+('Obi-Wan', 'Obiwankenobi.02@gmail.com', '', 4, '', '', 'Twitter', ''),
+('provaaaaaaa', 'prova@prova.com', '$2y$10$VlTZh4MPIPlYw6/WkJEm1e.ha', 8, '', '9414b8f5010f66b460c3bfafca769bdf', '', ''),
+('provaaaaa2', 'prova2@prova.com', '$2y$10$WQmJd3cSEiAF.HF4oEEzPeJvRudeogAaH/Ng2NWCF4Gfc1llrrE8.', 9, '', 'd54096772915b3b877aa5416e972d9ed', '', 'admin'),
+('provaaaaaa', 'prova3@prova.com', '$2y$10$nD6BV9.AK.o3ovWngDt6guqxFYAyJUOfw9W4G7XGyPgMuH7CgZoTW', 10, '', '423d178f7035f195526b869553aca93d', '', ''),
+('provaaaaa4', 'prova4@prova.com', '$2y$10$X5QacuD6Vn98ND4egWSmAO/pj8SRKvQCzX0li9nEKsgy2IocZNxfy', 11, '', '0a909f9a732b0eea800245995aaed494', '', '');
+
 --
--- Volcado de datos para la tabla `users`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `users` (`nickname`, `email`, `password`, `id`, `reset_token`, `remember_me_token`, `social_provider`) VALUES
-('Anakin', 'anakinskywalker@example.com', 'dd9d21e22391090ddce7c6ed58c6412d', 1, '', '', ''),
-('Usuari1', 'user@example.com', 'dd9d21e22391090ddce7c6ed58c6412d', 2, '', '', ''),
-('Luke', 'lukeskywalker@sapalomera.cat', '', 3, '', 'da8aa95050bdaede6d7415e9af84ef1a', 'GitHub'),
-('Obi-Wan', 'Obiwankenobi.02@gmail.com', '', 4, '', '', 'Twitter');
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
